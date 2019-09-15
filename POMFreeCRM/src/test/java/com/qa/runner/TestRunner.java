@@ -7,7 +7,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/java/com/qa/features",
+		features = "src/test/java/com/qa/features/DealMap.feature",
 		glue = {"com/qa/stepdefinitions"},
 		monochrome = true,
 		dryRun = false,

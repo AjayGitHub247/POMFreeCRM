@@ -50,6 +50,21 @@ public class DealPage extends TestBase {
 	@FindBy(xpath = "//tbody/tr/td[5]")
 	WebElement amount;
 	
+	@FindBy(xpath = "//button/i[@class='trash icon']")
+	WebElement deleteIcon;
+	
+	@FindBy(xpath = "//div[text()='Move to the bin']")
+	WebElement deletePopUpTitle;
+	
+	@FindBy(xpath = "//div/button[text()='Cancel']")
+	WebElement cancelButton;
+	
+	@FindBy(xpath = "//div/button[text()='Delete']")
+	WebElement deleteButton;
+	
+	@FindBy(xpath = "//span/p[text()='No records found']")
+	WebElement emptyDealListMsg;
+	
 	//Initializing the Page Objects 
 	
 	public DealPage() {
@@ -126,4 +141,39 @@ public class DealPage extends TestBase {
 	 	} 
 	}
 	
+	public void clickOnDeleteIcon() throws InterruptedException {
+		Thread.sleep(2000);
+		deleteIcon.equals(driver.switchTo().activeElement());
+		Thread.sleep(1000);
+		deleteIcon.click();
+		Thread.sleep(3000);
+	}
+	
+	public void verifyMoveToTheBinPopupDisplayed() throws InterruptedException {
+		Thread.sleep(2000);
+		boolean falg1 = deletePopUpTitle.isDisplayed();
+		Assert.assertTrue(falg1);
+		Thread.sleep(1000);
+		boolean falg2 = cancelButton.isDisplayed();
+		Assert.assertTrue(falg2);
+		Thread.sleep(1000);
+		boolean falg3 = deleteButton.isDisplayed();
+		Assert.assertTrue(falg3);
+		Thread.sleep(1000);	
+	}
+	
+	public void clickDeletebutton() throws InterruptedException {
+		Thread.sleep(1000);
+		deleteButton.equals(driver.switchTo().activeElement());
+		Thread.sleep(1000);
+		deleteButton.click();
+		Thread.sleep(1000);
+	}
+	
+	public void verifyDealIsDeleted() throws InterruptedException {
+		Thread.sleep(3000);
+		boolean falg1 = emptyDealListMsg.isDisplayed();
+		Assert.assertTrue(falg1);
+		Thread.sleep(1000);
+	}
 }	

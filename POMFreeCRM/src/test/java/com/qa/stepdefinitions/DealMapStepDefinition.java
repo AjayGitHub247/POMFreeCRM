@@ -110,6 +110,27 @@ public class DealMapStepDefinition extends TestBase {
 		
 		driver.quit();	    
 	}
+    
+
+    @When("^Map: User Clicks on Delete icon$")
+    public void map_user_clicks_on_delete_icon() throws Throwable {
+    	dealpage.clickOnDeleteIcon();  	
+    }
+
+    @Then("^Map: User Clicks on Delete button$")
+    public void map_user_clicks_on_delete_button() throws Throwable {
+        dealpage.clickDeletebutton();
+    }
+
+    @And("^Map: Verify the Move to the bin popup is displayed$")
+    public void map_verify_the_move_to_the_bin_popup_is_displayed() throws Throwable {
+    	dealpage.verifyMoveToTheBinPopupDisplayed();
+    }
+
+    @And("^Map: Verify the Deal is deleted from the list$")
+    public void map_verify_the_deal_is_deleted_from_the_list() throws Throwable {
+    	dealpage.verifyDealIsDeleted();      
+    }
 
 
 }

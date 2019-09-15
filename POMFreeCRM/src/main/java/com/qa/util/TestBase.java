@@ -17,7 +17,7 @@ public class TestBase {
 	public TestBase() {
 	try {
 		prop = new Properties();
-		FileInputStream fis = new FileInputStream("C://Eclipse//POMFreeCRM//src//main//java//com//qa//config//config.properties");
+		FileInputStream fis = new FileInputStream("C:/Users/abadridas.EAD/git/POMFreeCRM/POMFreeCRM/src/main/java/com/qa/config/config.properties");
 		prop.load(fis);
 	} catch (IOException e) {
 		e.getMessage();
@@ -27,6 +27,7 @@ public class TestBase {
 	public static void initialization() {
 		
 		String browserName = prop.getProperty("browser");
+		System.out.println(browserName);
 		
 		if(browserName.equals(browserName)) {		
 			System.setProperty("webdriver.chrome.driver", "C://Bin//chromedriver.exe");

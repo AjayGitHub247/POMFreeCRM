@@ -22,3 +22,22 @@ Then Verify the New Deal created with Title and Amount with Map
 | Title | Amount |
 | Test Deal two | 3500 |
 And Map: User Logout from the application
+
+@Reg
+Scenario: Delete a deal scenario with Map
+
+Given Map: User is on Login page
+When Map: Login Page is Dispalyed
+Then User Enter UserName and Password fields with Map
+| UserName | Password |
+| ajay24789@gmail.com | Ajay4444 |
+Then Map: User Clicks on login button
+And Map: User is on Home page
+Then Map: User Mouse Hover and Clicks on Deal Tab
+When Map: User Clicks on Delete icon
+And Map: Verify the Move to the bin popup is displayed
+Then Map: User Clicks on Delete button
+And Map: Verify the Deal is deleted from the list
+And Map: User Logout from the application
+
+
